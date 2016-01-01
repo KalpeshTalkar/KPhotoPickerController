@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-3Q-ZWJ">
-                                <rect key="frame" x="242" y="72" width="115" height="35"/>
+                                <rect key="frame" x="477" y="72" width="115" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Wsb-u5-uoF"/>
@@ -31,15 +31,68 @@
                                     <action selector="selectPhotos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="98g-dm-TvY"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UjD-hX-Fgb">
+                                <rect key="frame" x="8" y="115" width="584" height="477"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xu4-jq-92O">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="Jqv-rb-WT2" customClass="PictureCell" customModule="KimagePickerExample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iHn-dn-f3R">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="iHn-dn-f3R" firstAttribute="leading" secondItem="Jqv-rb-WT2" secondAttribute="leading" id="9us-ub-DaC"/>
+                                            <constraint firstItem="iHn-dn-f3R" firstAttribute="top" secondItem="Jqv-rb-WT2" secondAttribute="top" id="GX5-6s-eca"/>
+                                            <constraint firstAttribute="bottom" secondItem="iHn-dn-f3R" secondAttribute="bottom" id="NjG-Ms-e1g"/>
+                                            <constraint firstAttribute="trailing" secondItem="iHn-dn-f3R" secondAttribute="trailing" id="c2s-vx-qdz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="iHn-dn-f3R" id="ixB-in-Ds5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9Gf-RW-NuI"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLe-ec-yUd">
+                                <rect key="frame" x="8" y="79" width="461" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDH-3Q-ZWJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1cW-bn-Htt"/>
+                            <constraint firstAttribute="trailing" secondItem="NDH-3Q-ZWJ" secondAttribute="trailing" constant="8" id="6SS-g9-rOQ"/>
+                            <constraint firstItem="UjD-hX-Fgb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="9lF-cy-P35"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UjD-hX-Fgb" secondAttribute="bottom" constant="8" id="Jhw-4b-Lrj"/>
+                            <constraint firstItem="KLe-ec-yUd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="L60-cl-4T8"/>
+                            <constraint firstAttribute="trailing" secondItem="UjD-hX-Fgb" secondAttribute="trailing" constant="8" id="NCZ-Kq-wFI"/>
                             <constraint firstItem="NDH-3Q-ZWJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="SI5-zm-G5L"/>
+                            <constraint firstItem="NDH-3Q-ZWJ" firstAttribute="leading" secondItem="KLe-ec-yUd" secondAttribute="trailing" constant="8" id="V4I-0H-kvA"/>
+                            <constraint firstItem="UjD-hX-Fgb" firstAttribute="top" secondItem="NDH-3Q-ZWJ" secondAttribute="bottom" constant="8" id="iEG-tB-rPa"/>
+                            <constraint firstItem="KLe-ec-yUd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="j7n-6d-iFt"/>
+                            <constraint firstItem="UjD-hX-Fgb" firstAttribute="top" secondItem="KLe-ec-yUd" secondAttribute="bottom" constant="15" id="yJ1-X5-PpO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KPhotoPickerController Demo" id="yqW-v2-JUY"/>
                     <connections>
+                        <outlet property="collectionView" destination="UjD-hX-Fgb" id="e4d-Ch-T88"/>
+                        <outlet property="label" destination="KLe-ec-yUd" id="hTO-jJ-qeg"/>
                         <outlet property="selectPhotosBtn" destination="NDH-3Q-ZWJ" id="EsC-dC-a7Z"/>
                     </connections>
                 </viewController>
