@@ -173,18 +173,10 @@ class KAlbumPhotos: UIViewController, UICollectionViewDataSource, UICollectionVi
         var photos = Array<UIImage>()
         
         for indexPath in selected! {
-            /*
-            let cell = self.collectionView?.cellForItemAtIndexPath(indexPath) as! KPhotoCell
-            photos.append(cell.photo.image!)
-            */
-            
             let asset = assets[indexPath.row]
             let assetRepresentation = asset.defaultRepresentation()
             let orientation = UIImageOrientation.Up
             let img = UIImage(CGImage: assetRepresentation.fullResolutionImage().takeUnretainedValue(), scale: 1, orientation: orientation)
-            
-            //let thumbnailImageRef = asset.thumbnail().takeRetainedValue()
-            //let image = UIImage(CGImage: thumbnailImageRef)
             photos.append(img)
         }
         
