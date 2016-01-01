@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KAlbumPhotos" customModule="Easy_Digital" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="4d4-e1-iFj" id="MsV-mG-sAb"/>
+                <outlet property="view" destination="cLa-1T-S5x" id="RM4-nY-BbT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cLa-1T-S5x">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4d4-e1-iFj">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ljg-Mq-uHE">
+                        <size key="itemSize" width="100" height="100"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="iNk-D9-9ra"/>
+                        <outlet property="delegate" destination="-1" id="vWO-m6-qdf"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4d4-e1-iFj" secondAttribute="trailing" id="8qf-sw-ImA"/>
+                <constraint firstItem="4d4-e1-iFj" firstAttribute="leading" secondItem="cLa-1T-S5x" secondAttribute="leading" id="Vzb-Hq-71j"/>
+                <constraint firstItem="4d4-e1-iFj" firstAttribute="top" secondItem="cLa-1T-S5x" secondAttribute="top" id="a4Q-bX-2hp"/>
+                <constraint firstAttribute="bottom" secondItem="4d4-e1-iFj" secondAttribute="bottom" id="lJU-pk-apn"/>
+            </constraints>
+            <point key="canvasLocation" x="478" y="555"/>
+        </view>
+    </objects>
+</document>
